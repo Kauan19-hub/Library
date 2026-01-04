@@ -94,22 +94,20 @@ print('This file exists?', os.path.isfile(arquivo_caminho)  ## if exist, print '
 
 ---
 
-Clone this repository: 
-
-###
-```powershell
-git clone https://github.com/Kauan19-hub/Library-SENAI.git
-cd Library-SENAI
-```
-
-###
-
 Back-End (`Node.js` + `Express`)
 
 ###
 ```powershell
 cd backend
+```
+
+###
+```powershell
 npm install
+```
+
+###
+```powershell
 npm start
 ```
 
@@ -120,7 +118,15 @@ Front-End (`Angular` or `React`)
 ###
 ```powershell
 cd frontend
+```
+
+###
+```powershell
 npm install
+```
+
+###
+```powershell
 npm start
 ```
 
@@ -131,7 +137,15 @@ API `Django` (Optional)
 ###
 ```powershell
 cd api
+```
+
+###
+```powershell
 pip install -r requirements.txt
+```
+
+###
+```powershell
 python manage.py runserver
 ```
 
@@ -176,36 +190,6 @@ Issues and contributions are welcome! Feel free to suggest improvements or contr
 
 ---
 
-```pgsql
-   👤 User
-       │
-       ▼
- ┌─────────────────────────────┐
- │      Front-End (UI)         │
- │  Angular / React / HTML+CSS │
- └─────────────────────────────┘
-       │   Requisition HTTP
-       │  (GET, POST, PUT, DELETE)
-       ▼
- ┌─────────────────────────────┐
- │    Back-End (API REST)      │
- │  Node.js + Express / Django │
- │  Endpoints: /api/livros     │
- └─────────────────────────────┘
-       │    SQL Queries
-       ▼
- ┌─────────────────────────────┐
- │     Data Base (DB)          │ 
- │ MySQL / PostgreSQL / SQLite │
- └─────────────────────────────┘
-       ▲
-       │   Datas (JSON Response)
-       │
-       └───────────────────────────────→ Back to Front-End
-```
-
-###
-
 | ITEM                  | RESPONSIBLE FOR DEPENDENCIES              |
 |-----------------------|-------------------------------------------|
 | `env` (Python)        | Python Packages                           |
@@ -226,62 +210,3 @@ versions of all extensions and languages used to function correctly:
 ###
 
 **The versions of all extensions and dependencies are in the requirements.txt**
-
----
-
-**<h3>- Front-End</h3>**
-
-###
-
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=ts" height="30" alt="typescript logo" title="TypeScript" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=angular" height="30" alt="angularjs logo"  title="Angular.JS" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=tailwind" height="30" alt="tailwindcss logo" title="TailwindCSS" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=nodejs" height="30" alt="nodejs logo" title="Node.JS"  />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=html" height="30" alt="html5 logo" title="HTML5"  />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=css" height="30" alt="css logo" title="CSS3" />
-</div>
-
-###
-
-**<h3>- Back-End</h3>**
-
-###
-
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=py" height="30" alt="python logo"  title="Python" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=django" height="30" alt="django logo" title="Django" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=mysql" height="30" alt="mysql logo" title="MySQL | SQL"  />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=sqlite" height="30" alt="sqlite logo" title="SQLite" />
-</div>
-
-###
-
-**<h3>- Tools</h3>**
-
-###
-
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=vscode" height="30" alt="vscode logo" title="Visual Studio Code"  />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=git" height="30" alt="git logo" title="Git" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=github" height="30" alt="github logo" title="GitHub" />
-  <img width="2" />
-  <img src="https://skillicons.dev/icons?i=postman" height="30" alt="postman logo" title="Postman" />
-</div>
-
-
-
-
-
-
-
