@@ -30,15 +30,11 @@ fetch("http://localhost:3000/api/livros")
 
 ###
 
-✅ Env development;<br>
-✅ Installation of libraries: pandas and openpyxl for data manipulation and table creation with Excel;<br>
-✅ Folder structure in Insonmia or Postman for API testing;<br>
-✅ Automation scripts for generating spreadsheet readings using pandas and openpyxl;<br>
-✅ File and directory organization;<br>
-✅ Using Front-End and Back-End;<br>
-✅ Examples with Node.JS, Angular.JS and Express;<br>
-✅ Examples of how to use Django and JSON for API integration;<br>
-✅ Documentation explaining the project.<br>
+- `Env` development;
+- Installation of libraries: `pandas` and `openpyxl` for `data` manipulation and table creation with `Excel`;
+- **Folder** structure in `Insonmia` or `Postman` for **API testing**;
+- **Automation** scripts for generating **spreadsheet** readings using `pandas` and `openpyxl`;
+- **File** and directory organization;
 
 ---
 
@@ -151,42 +147,7 @@ python manage.py runserver
 
 ###
 
-**<h2>Versions</h2>**
-
-###
-
-- Python: `3.13`;
-- Node.js: `node -v`;
-- NPM: `npm -v`.
-
-###
-
-**<h2>Main Dependencies:</h2>**
-
-###
-
-- `pandas`, `openpyxl`, `Pillow`;
-- `Django Rest Framework`;
-- `Express`.
-
----
-
-`py manage.py runserver`</br>
-`ng serve`
-
-###
-
 **Tools for Tests**: [Insomnia](https://insomnia.rest/download) and/or [Postman](https://www.postman.com/downloads/)
-
-###
-
----
-
-**<h2>Contributions**
-
-###
-
-Issues and contributions are welcome! Feel free to suggest improvements or contribute to the project!
 
 ---
 
@@ -202,11 +163,9 @@ Issues and contributions are welcome! Feel free to suggest improvements or contr
 The flow of the application follows the model below: the user interacts through the Front-End, which consumes the data via API (Back-End),
 responsible for processing and querying the database. The response is sent in JSON, displayed again in the interface.
 
----
-
-OBS.: Depending on your version `Node.js`, `TypeScript`, `Django`, `TailwindCSS`, `Angular.JS` e `npm`, the bookstore may not be open. Below will be noted the 
+> OBS.: Depending on your version `Node.js`, `TypeScript`, `Django`, `TailwindCSS`, `Angular.JS` e `npm`, the bookstore may not be open. Below will be noted the 
 versions of all extensions and languages used to function correctly:
 
-###
+---
 
-**The versions of all extensions and dependencies are in the requirements.txt**
+> The versions of all extensions and dependencies are in the `requirements.txt`
