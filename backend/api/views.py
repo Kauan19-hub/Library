@@ -114,7 +114,7 @@ from .models import Book
 from .serializers import BookSerializer
 
 class BookViewSet(ModelViewSet):
-    queryset=Book.objects.select_related("autor").order_by("-id")
+    queryset=Book.objects.select_related("author").order_by("-id")
     serializer_class=BookSerializer
     parser_classes=[MultiPartParser,FormParser]
     filter_backends=[DjangoFilterBackend, SearchFilter, OrderingFilter]

@@ -16,7 +16,7 @@ class PublisherSerializer(serializers.ModelSerializer):
 
 
 class BookSerializer(serializers.ModelSerializer):
-    capa_url = serializers.SerializerMethodField()
+    cover_url = serializers.SerializerMethodField()
     class Meta:
         model = Book
         fields = [

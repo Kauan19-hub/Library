@@ -30,7 +30,7 @@ class Command(BaseCommand):
     def handle(self, *a, **o):
         df_publishers=pd.read_csv(o["file_publishers"],encoding="utf-8-sig")
         df_authors=pd.read_csv(o["file_authors"],encoding="utf-8-sig")
-        df_books=pd.read_csv(o["files_books"],encoding="utf-8-sig")
+        df_books=pd.read_csv(o["file_books"],encoding="utf-8-sig")
         df_publishers.columns=[c.strip().lower().lstrip("\ufeff") for c in df_publishers.columns]
         df_authors.columns=[c.strip().lower().lstrip("\ufeff") for c in df_authors.columns]
         df_books.columns=[c.strip().lower().lstrip("\ufeff") for c in df_books.columns]

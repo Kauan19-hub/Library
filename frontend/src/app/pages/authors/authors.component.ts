@@ -11,12 +11,13 @@ import { AuthService } from '../../services/auth.services';
   templateUrl: './authors.component.html'
 })
 export class AuthorsPage {
+  readonly error = signal(false);
+
   private svc = inject(AuthorsService);
   private auth = inject(AuthService); 
 
   authors = signal<Author[]>([]);
   loading = signal(true);
-  error = signal<string | null>(null); 
 
   constructor() {
     this.svc.list().subscribe({
@@ -26,8 +27,13 @@ export class AuthorsPage {
       },
 
       error: () => { 
-        this.error.set('Falha ao carregar autores'); 
+        this.error.set(true); 
         this.loading.set(false); 
+        console.error("Erro ao carregar autores");
+
+        setTimeout(() => {
+          this.error.set(false);
+        }, 3000);
       }
     });
   }

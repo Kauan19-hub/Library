@@ -12,7 +12,7 @@ export class AuthorsService {
   private http = inject(HttpClient);
   private base = environment.apiBase;
   
-  listar():Observable<Author[]> {
+  list():Observable<Author[]> {
     const url = `${this.base}api/authors/`;
     return this.http.get<Author[]>(url);
   }

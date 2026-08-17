@@ -1,15 +1,15 @@
-**<h2>BookStore</h2>**
+## SPINNE
 
 Feat: Initial setup with `env` virtual environment, automatic spreadsheets and organized projects! 
 
-**<h2>🔗 Connection Back-End ↔ Front-End</h2>**
+## Connection Back-End ↔ Front-End
 
 - The Back-End (`API`) provides data in format JSON - (Documentation);
 - The Front-End consumes this data via requests `HTTP` using `fetch` or `axios`.
 
 ---
 
-**<h2>Organization:</h2>**
+## Organization:
 
 - `spreadsheets/`: Has files  `.xlsx` generated;
 - `scripts/`: scripts for automations of spreadsheet;
@@ -26,6 +26,10 @@ Feat: Initial setup with `env` virtual environment, automatic spreadsheets and o
 | `requirements.txt`    | List of what to install on `env`          |
 | `package.json`        | List of what to install on `node_modules` |
 
+## Login
+
+- **Username**: spinne123;
+- **Password**: spinne123.
 
 The flow of the application follows the model below: the user interacts through the Front-End, which consumes the data via API (Back-End),
 responsible for processing and querying the database. The response is sent in JSON, displayed again in the interface.

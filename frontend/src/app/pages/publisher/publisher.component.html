@@ -1,29 +1,69 @@
-<section class="max-w-[900px] my-8 mx-auto px-4">
-    <h1 class="font-bold text-3xl">Editoras</h1>
+<section class="max-w-4xl my-8 mx-auto px-4">
+  <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+    <h1 class="text-3xl font-bold text-black tracking-tight">Editoras</h1>
+    <span class="text-xs font-semibold px-3 py-1 bg-slate-100 text-slate-600 rounded-full">
+      Total: {{ publishers().length }}
+    </span>
+  </div>
 
-      @if (loading()) {
-        <p>Carregando…</p>
+  @if (loading()) {
+    <div class="flex items-center justify-center p-8 space-x-3 text-slate-500">
+      <div class="w-5 h-5 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+      <span class="font-medium">Carregando editoras</span>
+    </div>
+  } 
+  
+  @else if (error()) {
+    <div class="p-4 mb-6 text-red-700 text-sm">
+      Falha ao carregar editoras
+    </div>
+  } 
+  
+  @else {
+    <div class="grid gap-4 sm:grid-cols-2">
+      @for (a of publishers(); track a.id) {
+        <div class="p-5 bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-3">
+              <h2 class="text-lg font-bold text-slate-900 leading-snug">
+                {{ a.publisher }}
+              </h2>
+              @if (a.cnpj) {
+                <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 shrink-0">
+                  {{ a.cnpj }}
+                </span>
+              }
+            </div>
 
-      } @else if (error()) {
-        <p class="text-red-700">{{ error() }}</p>
-      } @else {
-        
-        <ul class="pl-5">
-          @for (a of publishers(); track a.id) {
+            <div class="space-y-1.5 text-xs text-slate-600">
+              @if (a.address) {
+                <p class="flex items-center gap-1.5">
+                  <span class="truncate">{{ a.address }}</span>
+                </p>
+              }
 
-            <li class="my-1">
-              <strong>{{ a.publisher }}</strong>
-              @if (a.cnpj) { <div class="text-gray-600">{{ a.cnpj }} </div> }
-              @if (a.address) { <div class="text-gray-600"> {{ a.address }} </div> }
-              @if (a.phone) { <div class="text-gray-600">{{ a.phone }} </div> }
-              @if (a.email) { <div class="text-gray-600">{{ a.email }} </div> }
-              @if (a.site) { <div class="text-gray-600">{{ a.site }} </div> }
-            </li>
-          }
-        </ul>
+              @if (a.phone) {
+                <p class="flex items-center gap-1.5">
+                  <span>{{ a.phone }}</span>
+                </p>
+              }
+
+              @if (a.email) {
+                <p class="flex items-center gap-1.5">
+                  <a [href]="'mailto:' + a.email" class="text-indigo-600 hover:underline truncate">
+                    {{ a.email }}
+                  </a>
+                </p>
+              }
+            </div>
+          </div>
+        </div>
       }
+    </div>
+  }
 
-      <nav class="mt-4">
-        <a class="text-sky-600 hover:text-sky-700 cursor-pointer" routerLink="/home">Voltar</a>
-      </nav>
-    </section>
+  <nav class="mt-8 pt-4 border-t border-slate-100">
+    <a routerLink="/home" class="inline-flex items-center gap-2 text-sm font-normal text-sky-600 hover:text-sky-700 cursor-pointer">Voltar
+    </a>
+  </nav>
+</section>

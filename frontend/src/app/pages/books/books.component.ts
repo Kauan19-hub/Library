@@ -13,12 +13,13 @@ import { environment } from '../../../environments/environments';
   templateUrl: './books.component.html',
 })
 export class BooksComponent {
+  readonly error = signal(false);
+
   private svc = inject(BooksService);
   private auth = inject(AuthService);
 
   books = signal<Book[]>([]);
   loading = signal(true);
-  error = signal<string | null>(null);
   apiBase = (environment.apiBase ?? '').replace(/\/+$/, '');
 
   private pending = new Map<number, File>();
@@ -32,8 +33,13 @@ export class BooksComponent {
         this.loading.set(false);
       },
       error: () => {
-        this.error.set('Falha ao carregar livros');
+        this.error.set(true);
         this.loading.set(false);
+        console.error("Erro ao carregar livros");
+
+        setTimeout(() => {
+          this.error.set(false);
+        }, 3000);
       },
     });
   }
@@ -89,11 +95,11 @@ export class BooksComponent {
           const u = this.previews.get(id);
           if (u && u.startsWith('blob:')) URL.revokeObjectURL(u);
           this.previews.delete(id);
-        }, 500);
+        }, 3000);
       },
 
       error: (err) => {
-        console.error(err);
+        console.error("Falha ao enviar capa");
         this.upStatus.set(id, 'err');
 
         const u = this.previews.get(id);
@@ -102,7 +108,11 @@ export class BooksComponent {
         if (old) this.previews.set(id, old);
         else this.previews.delete(id);
 
-        this.error.set('Falha ao enviar capa');
+        this.error.set(true);
+
+        setTimeout(() => {
+          this.error.set(false);
+        }, 3000);
       },
     });
   }

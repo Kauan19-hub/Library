@@ -3,8 +3,12 @@ from django.contrib.auth.models import AbstractUser
 import os, uuid
 
 def path_cover(_, filename):
-    ext = os.path.splitext(filename)
+    ext=os.path.splitext(filename)[1]
     return f"covers/{uuid.uuid4().hex}{ext}"
+
+class User(AbstractUser):
+    def __str__(self):
+        return self.username
 
 class Author(models.Model):
     author=models.CharField(max_length=100)
@@ -25,7 +29,7 @@ class Publisher(models.Model):
     site=models.URLField(null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return self.publisher
 
 class Book(models.Model):
     title=models.CharField(max_length=50)

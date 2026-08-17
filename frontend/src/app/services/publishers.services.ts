@@ -10,7 +10,7 @@ export class PublishersService {
   private http = inject(HttpClient);
   private base = environment.apiBase;
   
-  listar():Observable<Publisher[]> {
+  list():Observable<Publisher[]> {
     const url = `${this.base.replace(/\/+$/, '')}/api/publishers/`;
     return this.http.get<Publisher[]>(url);
     

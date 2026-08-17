@@ -12,19 +12,19 @@ import { AuthService } from '../../services/auth.services';
 })
 
 export class LoginComponent {
-  private fb = inject(FormBuilder)
-  private auth = inject(AuthService)
-  private router = inject(Router)
+  readonly error = signal(false);
+
+  private fb = inject(FormBuilder);
+  private auth = inject(AuthService);
+  private router = inject(Router);
 
   loading = signal(false)
-  error = signal<string | null>(null)
   form = this.fb.group({username: ['', [Validators.required]], password: ['', [Validators.required]]})
 
   onSubmit() {
     if (this.form.invalid) return
 
     this.loading.set(true)
-    this.error.set(null)
 
     const {username, password} = this.form.value as {username: string, password: string}
 
@@ -36,8 +36,12 @@ export class LoginComponent {
 
       error: (e) => {
         this.loading.set(false)
-        this.error.set("Usuário ou senha inválido...")
-        console.log("Error ", e);
+        this.error.set(true)
+        console.error("Usuário ou senha inválido");
+
+        setTimeout(() => {
+          this.error.set(false);
+        }, 3000);
       }
     })
   }
