@@ -1,4 +1,4 @@
-**<h2>Library SENAI</h2>**
+**<h2>BookStore</h2>**
 
 ###
 Feat: Initial setup with `env` virtual environment, automatic spreadsheets and organized projects! 
