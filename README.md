@@ -33,3 +33,11 @@ Feat: Initial setup with `env` virtual environment, automatic spreadsheets and o
 
 The flow of the application follows the model below: the user interacts through the Front-End, which consumes the data via API (Back-End),
 responsible for processing and querying the database. The response is sent in JSON, displayed again in the interface.
+
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=angular" height="40" alt="angularjs logo" title="Angular" />
+  <img src="https://skillicons.dev/icons?i=django" height="40" alt="django logo" title="Django" />
+  <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo" title="Python" />
+  <img src="https://skillicons.dev/icons?i=tailwind" height="40" alt="tailwindcss logo" title="Tailwind" />
+  <img src="https://skillicons.dev/icons?i=ts" height="40" alt="typescript logo" title="TypeScript" />
+</div>
