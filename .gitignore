@@ -1,3 +1,6 @@
 env
+venv
+.vscode
+.angular
 node_modules
-# Não sobe para o repo
+__pycache__

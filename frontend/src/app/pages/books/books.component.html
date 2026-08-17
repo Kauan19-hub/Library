@@ -1,0 +1,88 @@
+<section class="max-w-5xl mx-auto px-4 py-6">
+  <h1 class="text-3xl font-bold mb-4">Livros</h1>
+
+  @if (loading()) {
+    <p class="text-gray-600">Carregando…</p>
+  } @else if (error()) {
+    <p class="text-red-600">{{ erro() }}</p>
+  } @else {
+  
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      @for (a of books(); track a.id) {
+        <li class="rounded-xl border border-gray-200 bg-white shadow-sm p-4">
+          <div class="mb-3 relative">
+            @if (coverSrc(a)) {
+              <img [src]="coverSrc(a)!" [alt]="'Capa de ' + a.title" class="justify-self-center w-[220px] h-[272px] h-68 rounded-lg border border-gray-100" fetchpriority="high" width="220" height="272" decoding="async"/>
+
+              <label class="absolute top-2 right-2 inline-flex items-center gap-1 rounded-md bg-white/90 px-2 py-1 text-xs font-medium shadow border cursor-pointer hover:bg-white" [for]="fileInputId(a.id)">
+                Alterar capa
+              </label>
+
+            } @else {
+              <label class="justify-self-center mb-3 w-[220px] h-68 grid place-items-center rounded-lg bg-gray-50 border border-dashed border-gray-300 text-gray-400 text-sm cursor-pointer hover:bg-gray-100" [for]="fileInputId(a.id)">
+                Sem capa — clique para enviar
+              </label>
+            }
+
+            <input type="file" accept="image/*" class="hidden" [id]="fileInputId(a.id)" (change)="onSelect($event, a.id)"/>
+
+            @if (statusUpload(a.id) === 'up') {
+              <div class="absolute bottom-2 right-2 text-[11px] bg-white/90 border rounded px-2 py-0.5">Enviando…</div>
+            } @else if (statusUpload(a.id) === 'ok') {
+              <div class="absolute bottom-2 right-2 text-[11px] bg-white/90 border rounded px-2 py-0.5">Capa atualizada</div>
+            } @else if (statusUpload(a.id) === 'err') {
+              <div class="absolute bottom-2 right-2 text-[11px] bg-white/90 border rounded px-2 py-0.5 text-red-600">Falha ao enviar</div>
+            }
+          </div>
+
+          <div class="text-base font-semibold text-gray-900">
+            {{ a.title }}
+
+            @if (a.subtitle) { <span class="text-gray-500 font-normal"> — {{ a.subtitle }}</span> }
+          </div>
+
+          <div class="mt-1 text-sm text-gray-600 space-x-2">
+            @if (a.author) { <span>{{ a.author }}</span> }
+            @if (a.publisher) { <span>{{ a.publisher }}</span> }
+            @if (a.isbn) { <span>ISBN: {{ a.isbn }}</span> }
+          </div>
+
+          @if (a.description) {
+      
+            <p class="mt-2 text-sm leading-relaxed text-gray-700">
+              {{ a.description }}
+            </p>
+          }
+
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3 items-start">
+            <dl class="sm:col-span-2 grid grid-cols-1 gap-y-2 text-sm">
+              @if (a.language) { <div><dt class="text-gray-500">Idioma: {{ a.language }}</dt></div> }
+              @if (a.year) { <div><dt class="text-gray-500">Ano: {{ a.year }}</dt></div> }
+              @if (a.pages) { <div><dt class="text-gray-500">Páginas: {{ a.pages }}</dt></div> }
+              @if (a.price) { <div><dt class="text-gray-500">Preço: {{ a.price }}</dt></div> }
+              @if (a.stock) { <div><dt class="text-gray-500">Estoque: {{ a.stock }}</dt></div> }
+              @if (a.discount) { <div><dt class="text-gray-500">Desconto: {{ a.discount }}</dt></div> }
+              @if (a.dimensions) { <div><dt class="text-gray-500">Dimensões: {{ a.dimensions }}</dt></div> }
+              @if (a.width) { <div><dt class="text-gray-500">Peso: {{ a.width }}</dt></div> }
+          
+              @if (a.available) {
+                <div class="col-span-2">
+                  <dt class="sr-only">Disponibilidade</dt>
+                  <dd>
+                    <span class="inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-1.5 text-xs font-medium">
+                      Disponível
+                    </span>
+                  </dd>
+                </div>
+              }
+            </dl>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  <nav class="mt-4">
+    <a routerLink="/home" class="text-sky-600 hover:text-sky-700 cursor-pointer">Voltar</a>
+  </nav>
+</section>

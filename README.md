@@ -1,9 +1,6 @@
 **<h2>BookStore</h2>**
 
-###
 Feat: Initial setup with `env` virtual environment, automatic spreadsheets and organized projects! 
-
-###
 
 **<h2>🔗 Connection Back-End ↔ Front-End</h2>**
 
@@ -12,57 +9,7 @@ Feat: Initial setup with `env` virtual environment, automatic spreadsheets and o
 
 ---
 
-`endpoint` example:
-
-###
-```js
-GET http://localhost:3000/api/livros
-```
-
-Consumes example in the Front-End
-
-###
-```js
-fetch("http://localhost:3000/api/livros")
-  .then(res => res.json())
-  .then(data => console.log(data));
-```
-
-###
-
-- `Env` development;
-- Installation of libraries: `pandas` and `openpyxl` for `data` manipulation and table creation with `Excel`;
-- **Folder** structure in `Insonmia` or `Postman` for **API testing**;
-- **Automation** scripts for generating **spreadsheet** readings using `pandas` and `openpyxl`;
-- **File** and directory organization;
-
----
-
-Spreadsheet automation using `pandas` and `openpyxl` 
-
-###
-
-Creation of the virtual environment: 
-
-###
-```powershell
-python -m venv env
-```
-
-###
-```powershell
-source env/bin/activate ## MacOS/Linux
-```
-###
-```powershell
-.\env\Scripts\activate ## Windows
-```
-
----
-
 **<h2>Organization:</h2>**
-
-###
 
 - `spreadsheets/`: Has files  `.xlsx` generated;
 - `scripts/`: scripts for automations of spreadsheet;
@@ -70,86 +17,7 @@ source env/bin/activate ## MacOS/Linux
 
 ---
 
-###
-
-**<h2>Quick tip :</h2>**
-
-###
-```python
-var1 = dir (link)  ## xlsx table path 
-var2 = pd.read_csv(var)  ## Call the path in another variable 
-
-print(file.head()) ## Start of spreadsheet 
-print(file.shape()) ## Middle of the spreadsheet 
-print(file.dtypes()) ## End of spreadsheet 
-
-path_file = r'T:\ (full path of files) 
-print('Currently Used Directory :', os.getcwd())   ## Remember to import the  (OS) - import os
-print('This file exists?', os.path.isfile(arquivo_caminho)  ## if exist, print 'TRUE', else, 'FALSE'
-```
-
----
-
-Back-End (`Node.js` + `Express`)
-
-###
-```powershell
-cd backend
-```
-
-###
-```powershell
-npm install
-```
-
-###
-```powershell
-npm start
-```
-
-###
-
-Front-End (`Angular` or `React`)
-
-###
-```powershell
-cd frontend
-```
-
-###
-```powershell
-npm install
-```
-
-###
-```powershell
-npm start
-```
-
-###
-
-API `Django` (Optional)
-
-###
-```powershell
-cd api
-```
-
-###
-```powershell
-pip install -r requirements.txt
-```
-
-###
-```powershell
-python manage.py runserver
-```
-
-###
-
 **Tools for Tests**: [Insomnia](https://insomnia.rest/download) and/or [Postman](https://www.postman.com/downloads/)
-
----
 
 | ITEM                  | RESPONSIBLE FOR DEPENDENCIES              |
 |-----------------------|-------------------------------------------|
@@ -158,14 +26,6 @@ python manage.py runserver
 | `requirements.txt`    | List of what to install on `env`          |
 | `package.json`        | List of what to install on `node_modules` |
 
-###
 
 The flow of the application follows the model below: the user interacts through the Front-End, which consumes the data via API (Back-End),
 responsible for processing and querying the database. The response is sent in JSON, displayed again in the interface.
-
-> OBS.: Depending on your version `Node.js`, `TypeScript`, `Django`, `TailwindCSS`, `Angular.JS` e `npm`, the bookstore may not be open. Below will be noted the 
-versions of all extensions and languages used to function correctly:
-
----
-
-> The versions of all extensions and dependencies are in the `requirements.txt`
