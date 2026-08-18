@@ -2,14 +2,14 @@
 
 Feat: Initial setup with `env` virtual environment, automatic spreadsheets and organized projects! 
 
-## Connection Back-End ↔ Front-End
+### Connection
 
 - The Back-End (`API`) provides data in format JSON - (Documentation);
 - The Front-End consumes this data via requests `HTTP` using `fetch` or `axios`.
 
 ---
 
-## Organization:
+### Organization:
 
 - `spreadsheets/`: Has files  `.xlsx` generated;
 - `scripts/`: scripts for automations of spreadsheet;
@@ -17,7 +17,7 @@ Feat: Initial setup with `env` virtual environment, automatic spreadsheets and o
 
 ---
 
-## Login
+### Login
 
 - **Username**: spinne123;
 - **Password**: spinne123.
