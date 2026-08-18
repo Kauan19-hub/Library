@@ -17,15 +17,6 @@ Feat: Initial setup with `env` virtual environment, automatic spreadsheets and o
 
 ---
 
-**Tools for Tests**: [Insomnia](https://insomnia.rest/download) and/or [Postman](https://www.postman.com/downloads/)
-
-| ITEM                  | RESPONSIBLE FOR DEPENDENCIES              |
-|-----------------------|-------------------------------------------|
-| `env` (Python)        | Python Packages                           |
-| `node_modules` (Node) | JS/Angular Packages                       |
-| `requirements.txt`    | List of what to install on `env`          |
-| `package.json`        | List of what to install on `node_modules` |
-
 ## Login
 
 - **Username**: spinne123;
